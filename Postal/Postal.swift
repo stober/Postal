@@ -61,7 +61,7 @@ public extension Postal {
     /// - parameters:
     ///     - timeout: A timeout for performing requests. If a request is not completed within the specified interval, the request is canceled and the completionHandler is called with an error.
     ///     - completion: The completion handler to call when the connection is done, or an error occurs. This handler is executed on the main queue.
-    func connect(timeout: TimeInterval = Postal.defaultTimeout, completion: @escaping (Result<Void, PostalError>) -> ()) {
+    func connect(timeout: TimeInterval = Postal.defaultTimeout, completion:  @escaping (Result<Void, PostalError>) -> ()) {
         doAsync({
             try self.session.connect(timeout: timeout)
             try self.session.login()
